@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
 
 
-function BooksEdit() {
+function BrandsEdit() {
     // const navigate = useNavigate();
     const { brandId } = useParams();
     const [brand, setBrand] = useState(null);
@@ -12,7 +12,7 @@ function BooksEdit() {
         try {
             let myBrand = await fetch(`https://fashion-board-backend.onrender.com/${brandId}`);
             myBrand = await myBrand.json();
-            setBook(myBrand);
+            setBrand(myBrand);
         } catch(err) {
             console.log(err);
         }
@@ -24,7 +24,7 @@ function BooksEdit() {
     }, []);
 
     function handleChange(e) {
-        setBook((currentState) => ({
+        setBrand((currentState) => ({
             ...currentState,
             [e.target.name]: e.target.value
         }))
