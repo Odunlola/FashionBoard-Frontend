@@ -1,34 +1,15 @@
-import Choices from "./Choices"
+
 
 function Brands() { 
-    const fashionBrands = [
-        {
-        name: "Vane Styles",
-        website:"wwww.shopvanestyle.com",
-        speciality: "Clothes, Jewelry, Shoes"
-        },
-        {
-        name: "Frock Avenue",
-        website:"www.frockavenue.com",
-        speciality: "Clothes, Jewelry, Shoes"
-        },
-        {
-        name: "KHOI",
-        website:"www.shopkhoi.com",
-        speciality: "Clothes, Jewelry, Shoes"
-        },
-        {
-        name: "Monica Collections",
-        website:"https://www.instagram.com/monicacollections__",
-        speciality: "Clothes, Jewelry, Shoes"
-        }
-    ]
          return(
             <>
-            <h2> Stylish Brands to Curate your Wardrobe </h2>
-            {fashionBrands.map((brand,idx) => {
-                return <div key={idx}><Choices choice={brand} /> </div>
-            })}
+            <a href="https://www.frockavenue.com" target="_blank"> 
+            <button> EXPLORE BRAND OF THE WEEK </button>
+            </a>
+            <div>
+            <a href="http://localhost:3000/"><img src="https://i.imgur.com/ZOkdfiO.jpg" title="source: imgur.com" /></a>
+            </div>
+           <h4>Curate your quiessential wardrobe with unique designs</h4>
             </>
          )
 

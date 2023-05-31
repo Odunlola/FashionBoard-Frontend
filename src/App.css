@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,56 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+nav {
+  width: 100%;
+  background-color: black;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
+logo {
+  position: relative;
+    width: 150px;
+    float:left;
+    margin-top:16px;
+    cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+  ;
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+.nav-item {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+    align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item:hover {
+  background-color: white;
+}
+
+.nav-item:hover {
+  color: darkgreen;
+}
+
+.logo img {
+  width: 175px;
+  vertical-align: middle;
 }
 
 .App-link {
@@ -35,4 +85,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  text-rendering: auto;
+  color: white;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent:5px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  background-color: black;
+  box-sizing: border-box;
+  margin: 1em;
+  font: 400 10px system-ui;
+  padding: 10px 15px 8px;
+  border-width: 2px;
+  border-style: solid;
+  border-image: initial;
+}
+
+.Home-img {
+  height: 100px;
+  max-height: 250px;
+  width: 100px;
+  max-width: 250px;
+  box-sizing: border-box;
+  margin: 1em;
+  font: 400 10px system-ui;
+  padding: 0px
 }

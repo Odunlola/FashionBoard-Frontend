@@ -1,38 +1,22 @@
-import { useState, useEffect } from "react";
+import '../App.css';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Brands from '../components/Brands';
 
-function Home () {
-    // I want to start with grabbing all my specials but when I don't have them, I'm going to say I have a null value for the starting point
-    const [specials, setSpecials] = useState(null);
 
-    async function fetchSpecials() {
-        try {
-            // I want to go and grab all my specials from the URL I have that is my backend API
-            let mySpecials = await fetch('http://localhost:4000/');
-            // I want to parse the string (as again, information tends to be sent as a string) and turn it into json
-            mySpecials = await mySpecials.json();
-            // console.log(mySpecials);
-            // Update the value of specials to be mySpecials that is now the API info parsed into JSON.
-            setSpecials(mySpecials);
-        } catch(err) {
-            console.log(err);
-        }
-    }
+function Home() {
 
-    useEffect(() => {
-        fetchSpecials();
-    }, [])
+  return (
+ <div className = 'App'> 
+  <Brands/>
+  <a href="https://imgur.com/N6zZKto"><img src="https://i.imgur.com/N6zZKto.jpg" title="source: imgur.com" alt="accessories" className="Home-img"/></a>
+  <a href="https://imgur.com/3E89Vs4"><img src="https://i.imgur.com/3E89Vs4.jpg" title="source: imgur.com"alt="blazer" className="Home-img"/></a>,
+  <a href="https://imgur.com/GfR14GL"><img src="https://i.imgur.com/GfR14GL.jpg" title="source: imgur.com" alt="dresses" className="Home-img"/></a>
+ 
 
-    return(
-        <>
-            {specials ? specials.map((special, idx) => {
-                return (
-                    <div key={idx}>
-                        <h2>{special.name}</h2>
-                    </div>
-                )
-            }) : <h2>Loading...</h2>} 
-        </>
-    )
+  </div>
+  )
 }
+
 
 export default Home;

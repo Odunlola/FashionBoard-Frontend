@@ -8,9 +8,9 @@ function BrandsShow () {
     console.log(brandId);
     async function getBrand() {
         try {
-            let myBrand = await fetch(`http://localhost:4000/brands/${brandId}`);
+            let myBrand = await fetch(`https://localhost:4000/${brandId}`);
             myBrand = await myBrand.json();
-            setBook(myBrand);
+            setBrand(myBrand);
         } catch(error) {
             console.log(error);
         }

@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom';
+
+
 function Header() {
     return(
         <div>
-            <nav>
-                <a href= "https://vane-style.com/"target="_blank" rel="noreferrer"> About Us</a>
-                <a href= "https://vane-style.com/"target="_blank" rel="noreferrer"> Clothing</a>
-                <a href= "https://vane-style.com/"target="_blank" rel="noreferrer"> Accesories</a>
-                <a href= "https://vane-style.com/"target="_blank" rel="noreferrer"> Account</a>
-                <a href= "https://vane-style.com/"target="_blank" rel="noreferrer"> Search</a>
+            <nav class="navbar">
+            <a href="https://freecodecamp.org" class="logo"><img src="https://i.imgur.com/vfw1git.png" alt="ol" display='flex' 
+        justifyContent= 'Right' alignItems= 'Right'/> </a>
+                <Link to="/" class="nav-item"> Home </Link>
+                <Link to= '/brands'class="nav-item"> Brands </Link>
+                <Link to= '/brands'class="nav-item"> Sign In </Link>
+                <Link to= '/brands'class="nav-item"> Sign Up</Link>
             </nav>
-        <h1>OliyaLamodi</h1>
-        <h6>Home for African Fashion</h6>
+        <h2>Home for African & Black-Owned Fashion Brands</h2>
         </div>
     )
 }
