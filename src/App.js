@@ -12,17 +12,17 @@ import BrandsDelete from './pages/BrandsDelete';
 function App() {
 
   return (
- <div className = 'App'> 
-  <Header/>
+    <div className='App'>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/brands'element={<BrandsShow />} />
+        <Route path='brands'>
           <Route path='' element={<BrandsIndex />} />
           <Route path=':brandId'>
-            {/* <Route path='' element={<BrandsShow />} /> */}
+            <Route path='' element={<BrandsShow />} />
             <Route path="edit" element={<BrandsEdit />} />
             <Route path="delete" element={<BrandsDelete />} />
-       
+          </Route>
         </Route>
       </Routes>
       <Footer />

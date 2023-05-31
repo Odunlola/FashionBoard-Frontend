@@ -8,7 +8,7 @@ function BrandsShow () {
     console.log(brandId);
     async function getBrand() {
         try {
-            let myBrand = await fetch(`https://localhost:4000/${brandId}`);
+            let myBrand = await fetch(`https://fashion-board-backend.onrender.com/${brandId}`);
             myBrand = await myBrand.json();
             setBrand(myBrand);
         } catch(error) {
@@ -22,10 +22,12 @@ function BrandsShow () {
         return(
             <>
                 <h2>Name: {brand.name}</h2>
+                <Link to = "" src={brand.image} alt="image" style={{ width: 50, height: 50 }} /> 
                 <h3>style: {brand.style}</h3>
                 <Link to={brand.website} >
                  <button> click to buy</button>
                 </Link>
+                <h3>Specialty: {brand.speciality}</h3>
                 <h3>Price: ${brand.price.toFixed(2)}</h3>
                 <Link to={`/brands/${brandId}/edit`}>
                     <button>Edit</button>
