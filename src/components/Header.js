@@ -12,7 +12,7 @@ function Header() {
                 <Link to='/' className="nav-item"> Sign In </Link>
                 <Link to='/' className="nav-item"> Sign Up</Link>
             </nav>
-            <h2>Home for African & Black-Owned Fashion Brands</h2>
+            <h3>Home for African & Black-Owned Fashion Brands</h3>
         </div>
     )
 }

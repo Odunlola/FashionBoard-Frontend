@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {FiThumbsUp} from "react-icons/fi";
-
+import {FiHeart} from "react-icons/fi";
 function Ratings() {
   const [rates, setRates] = useState(0)
    function updateRates () {
@@ -11,8 +11,8 @@ function Ratings() {
   return (
  <> 
  <div>
-  <h1> likes: {rates} </h1>
-  <button onClick={updateRates}> <FiThumbsUp/></button>
+  {/* <p> <FiHeart/>: {rates} </p> */}
+ <a><button onClick={updateRates}> <FiHeart/>: {rates} </button></a>
   </div>
   </> 
   

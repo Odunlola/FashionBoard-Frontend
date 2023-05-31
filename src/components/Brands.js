@@ -5,7 +5,7 @@ function Brands() {
             <button> EXPLORE BRAND OF THE WEEK </button>
             </a>
             <div>
-            <a href="http://localhost:3000/"><img src="https://i.imgur.com/ZOkdfiO.jpg" title="source: imgur.com" /></a>
+            <a href=""><img src="https://i.imgur.com/ZOkdfiO.jpg" title="source: imgur.com" /></a>
             </div>
            <h4>Curate your quiessential wardrobe with unique designs</h4>
             </>

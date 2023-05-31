@@ -39,19 +39,20 @@ function BrandsIndex () {
             <>
                 {arr.map((brand, idx) => {
                     return(
-                        <div display= 'grid' key={idx}>
+                        <td display= 'grid' key={idx}>
                             <Link to={`/brands/${brand._id}`}>
-                                <h2>{brand.name}</h2>
+                        
                             </Link>
                             {/* <a href="https://imgur.com/GfR14GL"><img src={brand.image} title="source: imgur.com" alt="dresses" className="Home-img"/></a>
    */}
-                            <Link to ={`/brands/${brand._id}`}>< img src={brand.image} alt= "" style={{ width: 150, height: 150 }} /></Link>
-                            <h3>Style: {brand.style}</h3>
-                            <h3>Price: ${brand.price}</h3>
-                            <Link to={brand.website} > <button> click to buy</button></Link>
-                            <h6>Specialty: {brand.speciality}</h6>
+                            <Link to ={`/brands/${brand._id}`}>< img src={brand.image} alt= "" style={{ width: 250, height: 400 }} /></Link>
+                            <h2>{brand.name}</h2>
+                            <h3>{brand.style}</h3>
+                            <h3> ${brand.price}</h3>
+                            <Link to={brand.website} target="_blank"> <button> click to buy</button></Link>
+                            <h6> {brand.speciality}</h6>
                             
-                        </div>
+                            </td>
                     )
                 })}
             </>
