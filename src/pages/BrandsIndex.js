@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Box from '@mui/material/Box';
 
 function BrandsIndex () {
 
@@ -38,14 +39,18 @@ function BrandsIndex () {
             <>
                 {arr.map((brand, idx) => {
                     return(
-                        <div key={idx}>
+                        <div display= 'grid' key={idx}>
                             <Link to={`/brands/${brand._id}`}>
-                                <h2>name: {brand.name}</h2>
+                                <h2>{brand.name}</h2>
                             </Link>
-                            <img src={brand.image} alt="image" style={{ width: 50, height: 50 }} /> 
+                            {/* <a href="https://imgur.com/GfR14GL"><img src={brand.image} title="source: imgur.com" alt="dresses" className="Home-img"/></a>
+   */}
+                            <Link to ={`/brands/${brand._id}`}>< img src={brand.image} alt= "" style={{ width: 150, height: 150 }} /></Link>
                             <h3>Style: {brand.style}</h3>
-                            <h3>Price: ${brand.price.toFixed(2)}</h3>
-                            <hr />
+                            <h3>Price: ${brand.price}</h3>
+                            <Link to={brand.website} > <button> click to buy</button></Link>
+                            <h6>Specialty: {brand.speciality}</h6>
+                            
                         </div>
                     )
                 })}
@@ -90,7 +95,9 @@ function BrandsIndex () {
                 <label>Price: $</label>
                 <input type="number" name="price" onChange={handleChange} placeholder="Price"/>
                 <label>Specialty: </label>
-                <input type="text" name="speciality" onChange={handleChange} placeholder="speciality"/>
+                <input type="text" name="speciality" onChange={handleChange} placeholder="specialty"/>
+                <label>Website: </label>
+                <input type="text" name="website" onChange={handleChange} placeholder="website"/>
                 <button>Submit</button>
             </form>
             {brands.length ? loaded(brands) : <h2>Loading...</h2>}

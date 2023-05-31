@@ -3,9 +3,9 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 function BrandsShow () {
-    const [brand, setBrand] = useState(null);
-    const { brandId } = useParams();
-    console.log(brandId);
+    let [brand, setBrand] = useState(null);
+     let { brandId } = useParams();
+    // console.log(brandId);
     async function getBrand() {
         try {
             let myBrand = await fetch(`https://fashion-board-backend.onrender.com/${brandId}`);
@@ -16,19 +16,17 @@ function BrandsShow () {
         }
     }
 
-    console.log(brand);
+    // console.log(brand);
 
     function brandLoaded() {
         return(
             <>
-                <h2>Name: {brand.name}</h2>
-                <Link to = "" src={brand.image} alt="image" style={{ width: 50, height: 50 }} /> 
-                <h3>style: {brand.style}</h3>
-                <Link to={brand.website} >
-                 <button> click to buy</button>
-                </Link>
+                <h2>{brand.name}</h2>
+                <Link to ={brand.image}>< img src={brand.image} style={{ width: 200, height: 200 }} /></Link>
+                <h3>Style: {brand.style}</h3>
+                <Link to={brand.website} > <button> click to buy</button></Link>
+                <h3>Price: ${brand.price}</h3>
                 <h3>Specialty: {brand.speciality}</h3>
-                <h3>Price: ${brand.price.toFixed(2)}</h3>
                 <Link to={`/brands/${brandId}/edit`}>
                     <button>Edit</button>
                 </Link>
@@ -41,7 +39,7 @@ function BrandsShow () {
 
     useEffect(() => {
         getBrand();
-    }, []);
+    },);
 
     return(
         <>

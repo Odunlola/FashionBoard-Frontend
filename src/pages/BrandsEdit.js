@@ -34,7 +34,7 @@ function BrandsEdit() {
         try{
             e.preventDefault();
             // console.log("I'm submitting my put request")
-            await fetch(`https://fashion-board-backend.onrender.com/${brandId}`, {
+            await fetch(`https://fashion-board-backend.onrender.com/${brand._Id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -58,6 +58,7 @@ function BrandsEdit() {
                     Image: <input type="text" value={brand.image} name="image" onChange={handleChange} />
                     Specialty: <input type="text" value={brand.speciality} name="specilaity" onChange={handleChange} />
                     Price: $<input type="number" value={brand.price} name="price" onChange={handleChange} />
+                    Website: <input type="text" value={brand.website} name="website" onChange={handleChange} />
                     <button>Submit</button>
                 </form>
             </>
